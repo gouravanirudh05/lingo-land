@@ -24,7 +24,7 @@ const io = new Server(server, {
 io.use(socketAuthMiddleware);
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mydatabase', {
+mongoose.connect('mongodb://localhost:27017/mylingodatabase', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
