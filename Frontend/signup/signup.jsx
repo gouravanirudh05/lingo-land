@@ -10,7 +10,7 @@ const App = () => {
         <input type="number" className="profile-input" placeholder="Age" />
 
         <label className="profile-label">Name</label>
-        <input type="text" className="profile-input" placeholder="Name (optional)" />
+        <input type="text" className="profile-input" placeholder="Name" />
 
         <label className="profile-label">Email</label>
         <input type="email" className="profile-input" placeholder="Email" />
