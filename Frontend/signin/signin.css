@@ -1,5 +1,4 @@
 /* General styling */
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
@@ -8,175 +7,58 @@
   box-sizing: border-box;
 }
 
-body, html, .app-container {
+body, html {
   width: 100vw;
   height: 100vh;
-  font-family: 'Press Start 2P', cursive; /* Pixelated font */
-  display: flex;
+  font-family: 'Press Start 2P', cursive;
   color: #fff;
   background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-container {
   display: flex;
-  background-color: #1e1e1e;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 20%;
-  background-color: #222;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-right: 4px solid #111; /* Blocky border */
-}
-
-.logo {
-  font-size: 1rem;
-  color: #4ade80;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* Reduced spacing for a compact look */
-  width: 100%;
-}
-
-.menu-item {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  padding: 8px;
-  border-radius: 2px; /* Square corners */
-  background-color: #333;
-}
-
-.menu-item.active, .menu-item:hover {
-  background-color: #4ade80;
-  color: #000;
-}
-
-/* Main Content */
-.main-content {
-  width: 60%;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #121212;
-  border-left: 4px solid #111;
-  border-right: 4px solid #111;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
+  gap: 2rem;
 }
 
-.lesson-info {
-  text-align: left;
-  color: #fff;
+/* Left content with welcome text */
+.left-content {
+  width: 250px;
+  text-align: center;
+  color: #a0aec0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.lesson-header {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-}
-
-.lesson-title {
+.left-content h2 {
   font-size: 1.2rem;
   color: #4ade80;
   margin-bottom: 10px;
-}
-
-.start-button {
-  background-color: #4ade80;
-  color: #000;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  border: 2px solid #333;
-}
-
-.start-button:hover {
-  background-color: #34d399;
-}
-
-.owl-icon {
-  font-size: 1.5rem;
-  margin-top: 10px;
-}
-
-/* Right Panel */
-.right-panel {
-  width: 20%;
-  background-color: #2d2d2d;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-left: 4px solid #111;
-}
-
-.leaderboard-info, .daily-quests, .profile-info {
-  background-color: #333;
-  padding: 10px;
-  border-radius: 2px;
-  color: #fff;
-  border: 2px solid #444; /* Blocky border */
-}
-
-.daily-quests .progress-bar {
-  background-color: #444;
-  border-radius: 2px;
-  height: 8px;
   overflow: hidden;
-  margin-top: 5px;
-  border: 1px solid #555; /* Pixelated look */
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: #4ade80;
-}
-
-.create-profile-button, .sign-in-button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  border-radius: 2px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border: 2px solid #333;
-  background-color: #4ade80;
-  color: #000;
-  text-align: center;
-}
-
-.sign-in-button {
-  background-color: #3b82f6;
-  color: #fff;
-}
-
-body {
-  background-color: #1e2943;
-  font-family: 'PixelFont', sans-serif;
-  margin: 0;
-  height: 100vh;
-  display: flex;
+  white-space: nowrap;
+  border-right: 0.15em solid #4ade80;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
 }
 
+.left-content p {
+  font-size: 0.9rem;
+  color: #a0aec0;
+}
+
+/* Centered container for login */
 .centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .login-container {
@@ -185,6 +67,7 @@ body {
   border-radius: 10px;
   text-align: center;
   width: 300px;
+  z-index: 1;
 }
 
 .login-title {
@@ -229,22 +112,21 @@ body {
   margin-top: 10px;
 }
 
-.social-login {
-  margin-top: 15px;
-  color: #a0aec0;
+/* Typing Effect */
+@keyframes blink-caret {
+  50% { border-color: transparent; }
 }
 
-.social-login p {
-  margin: 5px 0;
+/* Cursor styling */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: #4ade80;
+  margin-left: 2px;
+  animation: blink 0.7s steps(2, start) infinite;
 }
 
-.google-login {
-  background-color: #ffffff;
-  color: #333333;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 5px;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
