@@ -19,18 +19,21 @@ const LanguageLearningQuiz = () => {
 
         if (selectedOption === correctAnswer) {
             setIsCorrect(true);
-            
-            if (currentQuestion < totalQuestions) {
-                setCurrentQuestion(currentQuestion + 1);
-                setSelectedOption(null); 
-                setIsChecked(false); 
-            }
+
+            // Delay to show "Correct!" feedback before moving to the next question
+            setTimeout(() => {
+                if (currentQuestion < totalQuestions) {
+                    setCurrentQuestion(currentQuestion + 1);
+                    setSelectedOption(null); 
+                    setIsChecked(false);
+                    setIsCorrect(null); // Reset correctness state for the next question
+                }
+            }, 1000); // Adjust delay as needed
         } else {
             setIsCorrect(false);
         }
     };
 
-    
     const progressPercentage = (currentQuestion / totalQuestions) * 100;
 
     return (
