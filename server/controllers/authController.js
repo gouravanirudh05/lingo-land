@@ -13,9 +13,9 @@ export const signup = async (req, res) => {
             return res.status(403).json({ message: 'Username already exists, try using a different one' });
         }
 
-        const { username, email, password } = req.body;
+        const { username, email, age, password } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
-        let user = new User({ username, email, password: hashedPassword });
+        let user = new User({ username, email, age, password: hashedPassword });
         await user.save();
         return res.status(201).json({ message: 'User created successfully' });
     } catch (error) {
@@ -27,8 +27,8 @@ export const signup = async (req, res) => {
 // Login route
 export const login =  async (req, res) => {
     try {
-        const { username, password } = req.body;
-        const user = await User.findOne({ username });
+        const { email, password } = req.body;
+        const user = await User.findOne({ email });
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }

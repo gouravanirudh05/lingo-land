@@ -5,6 +5,7 @@ import cors from 'cors';
 import { createServer } from 'node:http';
 import authRoutes from './routes/authRoutes.js';
 import lessonRoutes from './routes/lessonRoutes.js';
+import chapterRoutes from './routes/chapterRoutes.js';
 
 
 const app = express();
@@ -26,7 +27,7 @@ mongoose.connect('mongodb://localhost:27017/mylingodatabase', {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/lesson', lessonRoutes);
-//app.use('/api/users', userRoutes);
+app.use('/api/chapter', chapterRoutes);
 
 
 

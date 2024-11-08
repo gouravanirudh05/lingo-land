@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
 
     chapter: {type: Number},
     lesson: {type: Number},
-
+    xp: {type: Number},
     streak: {type: Number}
 });
 

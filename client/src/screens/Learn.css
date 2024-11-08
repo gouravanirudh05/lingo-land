@@ -1,24 +1,12 @@
 /* General styling */
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html, .app-container {
-  width: 100vw;
-  height: 100vh;
-  font-family: 'Press Start 2P', cursive;
-  display: flex;
-  color: #fff;
-  background-color: #192228;
-}
 
 .app-container {
   display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
   background-color: #192228;
 }
 
@@ -30,7 +18,7 @@ body, html, .app-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-right: 4px solid #192228; 
+  border-right: 4px solid #192228;
 }
 
 .logo {
@@ -43,7 +31,7 @@ body, html, .app-container {
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 8px; 
+  gap: 8px;
   width: 100%;
 }
 
@@ -52,8 +40,7 @@ body, html, .app-container {
   text-decoration: none;
   font-size: 0.9rem;
   padding: 8px;
-  border-radius: 2px; 
-  background-color:black;
+  border-radius: 2px;
 }
 
 .menu-item.active, .menu-item:hover {
@@ -66,49 +53,79 @@ body, html, .app-container {
   width: 60%;
   padding: 20px;
   display: flex;
-  justify-content: center; /* Center the profile container horizontally */
-  align-items: center;     /* Center the profile container vertically */
+  flex-direction: column;
+  align-items: center;
   background-color: #192228;
   border-left: 4px solid #111;
   border-right: 4px solid #111;
 }
 
-.lesson-info {
-  text-align: left;
-  color: #fff;
-}
-
-.lesson-header {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  margin-bottom: 8px;
+.learn-title {
+  font-size: 1.5rem;
+  color: #4ade80;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
-.lesson-title {
+/* Chapter and Lesson Styles */
+.chapter-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.chapter {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  margin-bottom: 15px;
+}
+
+.chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chapter-header h3 {
   font-size: 1.2rem;
   color: #4ade80;
+  margin: 0;
+}
+
+.lesson-list {
+  margin-top: 10px;
+}
+
+.lesson-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 4px;
   margin-bottom: 10px;
 }
 
-.start-button {
+.lesson-item span {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.continue-button {
   background-color: #4ade80;
   color: #000;
-  padding: 8px 16px;
+  padding: 5px 10px;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   border: 2px solid #333;
 }
 
-.start-button:hover {
+.continue-button:hover {
   background-color: #34d399;
-}
-
-.owl-icon {
-  font-size: 1.5rem;
-  margin-top: 10px;
 }
 
 /* Right Panel */
@@ -127,16 +144,16 @@ body, html, .app-container {
   padding: 10px;
   border-radius: 2px;
   color: #fff;
-  border: 2px solid #444; /* Blocky border */
+  border: 2px solid #444;
 }
 
-.daily-quests .progress-bar {
+.progress-bar {
   background-color: #444;
   border-radius: 2px;
   height: 8px;
   overflow: hidden;
   margin-top: 5px;
-  border: 1px solid #555; /* Pixelated look */
+  border: 1px solid #555;
 }
 
 .progress-fill {
@@ -161,42 +178,34 @@ body, html, .app-container {
   background-color: #3b82f6;
   color: #fff;
 }
-.profile-container {
-  text-align: center;
-  color: #fff;
-  width: 100%; /* Occupies available width within main-content */
+.chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.profile-card {
-  background-color: #333;
-  padding: 15px;
-  border-radius: 8px;
-  color: #fff;
-  border: 2px solid #444; /* Gives a blocky border */
-}
-
-.profile-avatar {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
-}
-
-.edit-button, .view-progress-button {
-  margin-top: 10px;
-  padding: 8px 16px;
+.unlock-info {
+  color: #9ca3af;
   font-size: 0.9rem;
-  border: 2px solid #333;
-  border-radius: 2px;
-  cursor: pointer;
 }
 
-.edit-button {
+.progress-bar {
+  background-color: #444;
+  border-radius: 4px;
+  height: 8px;
+  width: 50%;
+  margin: 0 10px;
+  overflow: hidden;
+  border: 1px solid #555;
+}
+
+.progress-fill {
+  height: 100%;
   background-color: #4ade80;
-  color: #000;
 }
 
-.view-progress-button {
-  background-color: #3b82f6;
-  color: #fff;
+.progress-percent {
+  font-size: 0.9rem;
+  color: #9ca3af;
 }
+

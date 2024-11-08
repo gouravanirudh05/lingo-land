@@ -1,4 +1,5 @@
 import questionModel from "../models/questionModel.js";
+import User from "../models/userModel.js";
 
 export const checkAnswer = async (req, res) => {
 
@@ -39,3 +40,17 @@ export const getNumberOfQuestions = async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 };
+
+export const handleFinishQuiz = async (req, res) => {
+    console.log(req.body);
+    try {
+        await User.updateOne({_id: req.user._id}, {xp: req.user.xp + req.body.noOfCorrect});
+
+        res.status(201).json({noOfQns: noOfQns});
+
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+};
+
+
