@@ -27,7 +27,7 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
       <div className="chapter-header" onClick={() => !isLocked && setIsOpen(!isOpen)}>
         <h3>{title}</h3>
         {isLocked ? (
-          <span className="unlock-info">Unlock at {requiredXP} XP</span>
+          <span className="unlock-info">Unlock at {requiredXP} XP 🔒</span>
         ) : (
           <>
             <div className="progress-bar">
