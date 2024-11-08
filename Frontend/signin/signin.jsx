@@ -14,10 +14,6 @@ const App = () => {
 
         <button className="sign-in-button">SIGN IN</button>
       </div>
-      <div className="social-login">
-        <p>OR</p>
-        <button className="google-login">Google</button>
-      </div>
     </div>
   );
 };
