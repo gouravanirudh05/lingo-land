@@ -19,18 +19,17 @@ const LanguageLearningQuiz = () => {
 
         if (selectedOption === correctAnswer) {
             setIsCorrect(true);
-
-            // Delay to show "Correct!" feedback before moving to the next question
-            setTimeout(() => {
-                if (currentQuestion < totalQuestions) {
-                    setCurrentQuestion(currentQuestion + 1);
-                    setSelectedOption(null); 
-                    setIsChecked(false);
-                    setIsCorrect(null); // Reset correctness state for the next question
-                }
-            }, 1000); // Adjust delay as needed
         } else {
             setIsCorrect(false);
+        }
+    };
+
+    const handleContinue = () => {
+        if (currentQuestion < totalQuestions) {
+            setCurrentQuestion(currentQuestion + 1);
+            setSelectedOption(null); 
+            setIsChecked(false);
+            setIsCorrect(null); // Reset correctness state for the next question
         }
     };
 
@@ -63,7 +62,7 @@ const LanguageLearningQuiz = () => {
                             onClick={() => handleOptionSelect(option)}
                             className={`option-button 
                               ${selectedOption === option ? 'selected' : ''} 
-                              ${isChecked && isCorrect && selectedOption === option ? 'correct' : ''}
+                              ${isChecked && isCorrect && selectedOption === option ? 'correct' : ''} 
                               ${isChecked && !isCorrect && selectedOption === option ? 'wrong' : ''}`}
                         >
                             {index + 1}. {option}
@@ -73,13 +72,22 @@ const LanguageLearningQuiz = () => {
 
                 <div className="action-buttons">
                     <button className="skip-button">Skip</button>
-                    <button
-                        onClick={handleCheck}
-                        disabled={!selectedOption}
-                        className={`check-button ${selectedOption ? '' : 'disabled'}`}
-                    >
-                        Check
-                    </button>
+                    {!isChecked ? (
+                        <button
+                            onClick={handleCheck}
+                            disabled={!selectedOption}
+                            className={`check-button ${selectedOption ? '' : 'disabled'}`}
+                        >
+                            Check
+                        </button>
+                    ) : (
+                        <button
+                            onClick={handleContinue}
+                            className="continue-button"
+                        >
+                            Continue
+                        </button>
+                    )}
                 </div>
 
                 {isChecked && isCorrect && <p className="feedback correct">Correct!</p>}
