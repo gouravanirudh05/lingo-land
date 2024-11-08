@@ -1,72 +1,27 @@
-/* General styling */
+import React from 'react';
+import './App.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+const App = () => {
+  return (
+    <div className="profile-container">
+      <h1 className="profile-title">Create your profile</h1>
+      <div className="profile-form">
+        <label className="profile-label">Age</label>
+        <input type="number" className="profile-input" placeholder="Age" />
 
+        <label className="profile-label">Name</label>
+        <input type="text" className="profile-input" placeholder="Name (optional)" />
 
-/* App.css */
-body {
-  background-color: #192228; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Press Start 2P', cursive;
-}
+        <label className="profile-label">Email</label>
+        <input type="email" className="profile-input" placeholder="Email" />
 
-.profile-container {
-  background-color: #2c3e50; 
-  color: #e0e0e0;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-}
+        <label className="profile-label">Password</label>
+        <input type="password" className="profile-input" placeholder="Password" />
 
-.profile-title {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
+        <button className="create-account-button">Create Account</button>
+      </div>
+    </div>
+  );
+};
 
-.profile-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-label {
-  font-size: 10px;
-  text-align: left;
-  color: #b0b0b0;
-  margin-bottom: 5px;
-}
-
-.profile-input {
-  font-size: 14px;
-  padding: 10px;
-  margin-bottom: 15px;
-  background-color: #34495e;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-
-.create-account-button {
-  background-color: #3498db; 
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-family: 'Press Start 2P', cursive;
-}
-
-.create-account-button:hover {
-  background-color: #2980b9;
-}
-
-
+export default App;
