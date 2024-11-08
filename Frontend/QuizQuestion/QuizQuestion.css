@@ -150,7 +150,7 @@ body, html {
 
 .option-button.selected
 {
-  background-color:#020f2b;
+  background-color:#192228;
   border-color: #4c8bf5;
 }
 .option-button.correct {
@@ -211,11 +211,11 @@ body, html {
 }
 
 .feedback.correct {
-  color: #28a745;
+  color:#28a745;
 }
 
 .feedback.wrong {
-  color: #f05454;
+  color:#f05454;
 }
 .skip-button {
   background: none;
