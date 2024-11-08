@@ -20,10 +20,6 @@ const App = () => {
 
         <button className="create-account-button">CREATE ACCOUNT</button>
       </div>
-      <div className="social-login">
-        <p>OR</p>
-        <button className="facebook-login">Facebook</button>
-      </div>
     </div>
   );
 };
