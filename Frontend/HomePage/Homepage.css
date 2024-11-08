@@ -11,15 +11,15 @@
 body, html, .app-container {
   width: 100vw;
   height: 100vh;
-  font-family: 'Press Start 2P', cursive; /* Pixelated font */
+  font-family: 'Press Start 2P', cursive;
   display: flex;
   color: #fff;
-  background-color: #1e1e1e;
+  background-color: #192228;
 }
 
 .app-container {
   display: flex;
-  background-color: #1e1e1e;
+  background-color: #192228;
 }
 
 /* Sidebar */
@@ -30,7 +30,7 @@ body, html, .app-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-right: 4px solid #111; /* Blocky border */
+  border-right: 4px solid #192228; 
 }
 
 .logo {
@@ -43,7 +43,7 @@ body, html, .app-container {
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Reduced spacing for a compact look */
+  gap: 8px; 
   width: 100%;
 }
 
@@ -52,7 +52,7 @@ body, html, .app-container {
   text-decoration: none;
   font-size: 0.9rem;
   padding: 8px;
-  border-radius: 2px; /* Square corners */
+  border-radius: 2px; 
   background-color: #333;
 }
 
@@ -68,7 +68,7 @@ body, html, .app-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #121212;
+  background-color: #192228;
   border-left: 4px solid #111;
   border-right: 4px solid #111;
 }
