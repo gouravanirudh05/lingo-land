@@ -11,12 +11,9 @@ const App = () => {
           <a href="#letters" className="menu-item">क Letters</a>
           <a href="#leaderboards" className="menu-item">🛡 Leaderboards</a>
           <a href="#quests" className="menu-item">📘 Quests</a>
-          <a href="#shop" className="menu-item">🛍 Shop</a>
           <a href="#profile" className="menu-item">👤 Profile</a>
-          <a href="#more" className="menu-item">⋯ More</a>
         </nav>
       </aside>
-      
       <main className="main-content">
         <section className="lesson-info">
           <div className="lesson-header">SECTION 1, UNIT 1</div>
