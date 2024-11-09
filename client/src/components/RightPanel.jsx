@@ -49,17 +49,6 @@ const RightPanel = () => {
             <div className="progress-fill" style={{ width: progress }}></div>
           </div>
         </div>
-        <div className="weekly-streak">
-          <h3>Weekly Streak</h3>
-          <div className="streak-days">
-            {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, index) => (
-              <div key={index} className="streak-day">
-                <span className="day-label">{day}</span>
-                <span className={weeklyStreak[index] ? 'streak-icon fire' : 'streak-icon circle'}></span>
-              </div>
-            ))}
-          </div>
-        </div>
         <div className="profile-info">
           <p>Create a profile to save your progress!</p>
           <Link to='/signup'><button className="create-profile-button">CREATE A PROFILE</button></Link>
