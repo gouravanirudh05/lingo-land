@@ -8,20 +8,18 @@ const App = () => {
 
   useEffect(() => {
     let index = 0;
-
     const typeInterval = setInterval(() => {
-      setText((prevText) => prevText + fullText.charAt(index)); // Append character by character
+      setText((prevText) => prevText + fullText.charAt(index)); 
       index += 1;
 
-      // Clear the interval and hide the cursor after full text is typed
       if (index === fullText.length) {
         clearInterval(typeInterval);
-        setTimeout(() => setShowCursor(false), 500); // Hide cursor after a short delay
+        setTimeout(() => setShowCursor(false), 500); 
       }
-    }, 150); // Typing speed
+    }, 150);
 
-    return () => clearInterval(typeInterval); // Cleanup interval on unmount
-  }, []); // No dependencies needed here
+    return () => clearInterval(typeInterval);
+  }, []);
 
   return (
     <div className="app-container">
@@ -34,6 +32,7 @@ const App = () => {
         <p>Continue your language learning journey.</p>
       </div>
 
+      {/* Centered container with login form */}
       <div className="centered-container">
         <div className="login-container">
           <h1 className="login-title">Sign In</h1>
@@ -45,6 +44,7 @@ const App = () => {
             <input type="password" className="login-input" placeholder="Password" />
 
             <button className="sign-in-button">SIGN IN</button>
+            <p className="forgot-password-link">Forgot Password?</p>
           </div>
         </div>
       </div>
