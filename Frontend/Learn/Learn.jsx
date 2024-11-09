@@ -7,11 +7,9 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
     Array(lessons.length).fill(false)
   );
 
-  
   const completedCount = completedLessons.filter(Boolean).length;
   const progress = Math.round((completedCount / lessons.length) * 100);
 
-  
   const toggleLessonCompletion = (index) => {
     setCompletedLessons((prev) => {
       const updated = [...prev];
@@ -61,7 +59,7 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
 };
 
 const App = () => {
-  const currentXP = 1200; 
+  const currentXP = 1200;
 
   const chapters = [
     { title: 'Chapter 1: Basics', lessons: [
@@ -92,6 +90,22 @@ const App = () => {
           <a href="#profile" className="menu-item">👤 Profile</a>
         </nav>
       </aside>
+
+      <div className="main-content">
+        <h1 className="learn-title">Learn</h1>
+        <div className="chapter-container">
+          {chapters.map((chapter, index) => (
+            <Chapter
+              key={index}
+              title={chapter.title}
+              lessons={chapter.lessons}
+              requiredXP={chapter.requiredXP}
+              currentXP={currentXP}
+            />
+          ))}
+        </div>
+      </div>
+
       <aside className="right-panel">
         <div className="leaderboard-info">
           <h3>Unlock Leaderboards!</h3>
