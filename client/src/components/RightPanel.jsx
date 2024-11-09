@@ -52,7 +52,7 @@ const RightPanel = () => {
         <div className="profile-info">
           <p>Create a profile to save your progress!</p>
           <Link to='/signup'><button className="create-profile-button">CREATE A PROFILE</button></Link>
-          <Link to='/signup'><button className="sign-in-button">SIGN IN</button></Link>
+          <Link to='/signin'><button className="sign-in-button">SIGN IN</button></Link>
         </div>
       </aside>
   );
