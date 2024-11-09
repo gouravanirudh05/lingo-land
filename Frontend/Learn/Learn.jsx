@@ -83,7 +83,7 @@ const App = () => {
   return (
     <div className="app-container">
       <aside className="sidebar">
-        <h2 className="logo">Duolingo</h2>
+        <h2 className="logo">Lingo Land</h2>
         <nav className="menu">
           <a href="#learn" className="menu-item active">🏠 Learn</a>
           <a href="#letters" className="menu-item">क Letters</a>
@@ -92,22 +92,6 @@ const App = () => {
           <a href="#profile" className="menu-item">👤 Profile</a>
         </nav>
       </aside>
-
-      <main className="main-content">
-        <h2 className="learn-title">Learn</h2>
-        <div className="chapter-container">
-          {chapters.map((chapter, index) => (
-            <Chapter
-              key={index}
-              title={chapter.title}
-              lessons={chapter.lessons}
-              requiredXP={chapter.requiredXP}
-              currentXP={currentXP}
-            />
-          ))}
-        </div>
-      </main>
-
       <aside className="right-panel">
         <div className="leaderboard-info">
           <h3>Unlock Leaderboards!</h3>
