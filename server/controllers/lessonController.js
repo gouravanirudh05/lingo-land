@@ -44,9 +44,32 @@ export const getNumberOfQuestions = async (req, res) => {
 export const handleFinishQuiz = async (req, res) => {
     console.log(req.body);
     try {
-        await User.updateOne({_id: req.user._id}, {xp: req.user.xp + req.body.noOfCorrect});
+        const today = new Date();
+        var streakCount = 0;
+      
+        if (req.user.lastXPUpdate) {
+          const diffInDays = Math.floor((today - req.user.lastXPUpdate) / (1000 * 60 * 60 * 24));
+          
+          if (diffInDays === 1) {
+            streakCount = req.user.streak + 1; // Continue the streak
+          } else if (diffInDays > 1) {
+            streakCount = 1; // Reset the streak
+          }
+        } else {
+          streakCount = 1; // Start a new streak
+        }
+    
+        await User.updateOne(
+            { _id: req.user._id }, 
+            { 
+              xp: req.user.xp + req.body.noOfCorrect, 
+              streak: streakCount,
+              todayXP: req.user.todayXP + req.body.noOfCorrect,
+              lastXPUpdate: today 
+            }
+          );
 
-        res.status(201).json({noOfQns: noOfQns});
+        res.status(201);
 
     } catch (err) {
         res.status(400).json({ message: err.message });

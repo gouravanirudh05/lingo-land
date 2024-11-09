@@ -1,8 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Homepage.css';
 
 const Homepage = () => {
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('/learn');
+  }, []);
+
   return (
     <div className="app-container">
       <aside className="sidebar">

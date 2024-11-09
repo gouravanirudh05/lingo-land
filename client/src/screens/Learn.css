@@ -40,7 +40,6 @@
   text-decoration: none;
   font-size: 0.9rem;
   padding: 8px;
-  border-radius: 2px;
 }
 
 .menu-item.active, .menu-item:hover {
@@ -113,19 +112,46 @@
   font-size: 0.9rem;
 }
 
-.continue-button {
-  background-color: #4ade80;
-  color: #000;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
+button, .create-profile-button, .sign-in-button, .continue-button {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #d2b48c; 
+  color: #3d2f1b; 
+  border: 2px solid #8b4513; 
+  padding: 10px;
   cursor: pointer;
-  font-size: 0.8rem;
-  border: 2px solid #333;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 4px 4px #8b4513, 8px 8px #3d2f1b; 
 }
 
-.continue-button:hover {
-  background-color: #34d399;
+button:hover, .create-profile-button:hover, .sign-in-button:hover, .continue-button:hover {
+  background-color: #bfa078; 
+  box-shadow: 3px 3px #8b4513, 6px 6px #3d2f1b;
+}
+
+button:active, .create-profile-button:active, .sign-in-button:active, .continue-button:active {
+  background-color: #a9865e; 
+  box-shadow: 2px 2px #8b4513, 4px 4px #3d2f1b;
+}
+
+/* Profile Button Container */
+.profile-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  margin-top: 10px;
+}
+
+.create-profile-button,
+.sign-in-button {
+  width: 80%; 
+  padding: 12px; 
+  text-align: center;
+}
+
+.create-profile-button {
+  margin-bottom: 10px;
 }
 
 /* Right Panel */
@@ -139,7 +165,7 @@
   border-left: 4px solid #111;
 }
 
-.leaderboard-info, .daily-quests, .profile-info {
+.leaderboard-info, .daily-quests, .weekly-streak, .profile-info {
   background-color: #333;
   padding: 10px;
   border-radius: 2px;
@@ -147,65 +173,69 @@
   border: 2px solid #444;
 }
 
-.progress-bar {
-  background-color: #444;
-  border-radius: 2px;
-  height: 8px;
-  overflow: hidden;
-  margin-top: 5px;
-  border: 1px solid #555;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: #4ade80;
-}
-
-.create-profile-button, .sign-in-button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  border-radius: 2px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border: 2px solid #333;
-  background-color: #4ade80;
-  color: #000;
-  text-align: center;
-}
-
-.sign-in-button {
-  background-color: #3b82f6;
-  color: #fff;
-}
-.chapter-header {
+/* Streak Section */
+.weekly-streak {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
-.unlock-info {
-  color: #9ca3af;
-  font-size: 0.9rem;
+.streak-days {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
 }
 
+.streak-day {
+  text-align: center;
+}
+
+.day-label {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.streak-icon {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.streak-icon.fire::before {
+  content: "🔥";
+}
+
+.streak-icon.circle::before {
+  content: "⚪";
+}
+/* Progress Bar Styling */
 .progress-bar {
-  background-color: #444;
-  border-radius: 4px;
+  width: 80%;
   height: 8px;
-  width: 50%;
-  margin: 0 10px;
+  background-color: #4a5568;
+  border-radius: 4px;
   overflow: hidden;
-  border: 1px solid #555;
+  margin: 5px 0;
+  position: relative;
 }
 
 .progress-fill {
   height: 100%;
   background-color: #4ade80;
+  transition: width 0.3s ease-in-out;
+}
+/* Lock icon styles */
+.lock-icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  color: #9ca3af; /* Light gray color for lock */
 }
 
-.progress-percent {
-  font-size: 0.9rem;
+/* Unlock Info */
+.unlock-info {
   color: #9ca3af;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
 }
-

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import { Link, useNavigate } from 'react-router-dom';
 
-const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
+const Chapter = ({ title, indexChap, lessons, requiredXP, currentXP, loggedIn }) => {
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const [completedLessons, setCompletedLessons] = useState(
       Array(lessons.length).fill(false)
@@ -18,8 +20,9 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
         return updated;
       });
     };
-  
-    const isLocked = currentXP < requiredXP;
+
+    var isLocked = currentXP < requiredXP;
+    var isLocked = !loggedIn;
   
     return (
       <div className="chapter">
@@ -46,10 +49,10 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
                 <span>{lesson.title}</span>
                 <button
                   className="continue-button"
-                  onClick={() => toggleLessonCompletion(index)}
+                  onClick={() => navigate(`/lesson/${index+1}/chapter/${indexChap+1}`)}
                   disabled={isLocked}
                 >
-                  {completedLessons[index] ? 'Completed' : 'Continue Lesson'}
+                  Take lesson
                 </button>
               </li>
             ))}

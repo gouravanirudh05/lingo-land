@@ -4,6 +4,7 @@ import Homepage from './screens/Homepage';
 import Signin from './screens/Signin';
 import Signup from './screens/Signup';
 import Lesson from './screens/Lesson'; 
+import Profile from './screens/Profile';
 import Learn from './screens/Learn';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/learn" element={<Learn />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/lesson/:lessonNo/chapter/:chapterNo" element={<Lesson />} />

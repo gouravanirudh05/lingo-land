@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import './Lesson.css';
 
 const BACKEND_URL =
@@ -16,6 +16,8 @@ const Lesson = () => {
   const [noOfQns, setNoOfQns] = useState(0);
   const [isChecked, setIsChecked] = useState(false);
   const [noOfCorrect, setNoOfCorrect] = useState(0);
+
+  const navigate = useNavigate();
 
   const progressPercentage = (noOfCorrect / noOfQns) * 100;
 
@@ -149,8 +151,7 @@ const Lesson = () => {
 
     const json = await response.json();
     
-    // Redirect the user to the dashboard
-    window.location.href = '/';
+    navigate('/learn');
   };
 
 
@@ -159,7 +160,7 @@ const Lesson = () => {
     <div className="quiz-container">
         <div className="quiz-box">
             <div className="quiz-header">
-                <button className="exit-button">&times;</button>
+                <Link to='/learn'><button className="exit-button">&times;</button></Link>
                 <div className="progress-bar">
                     <div className="progress" style={{ width: `${progressPercentage}%` }}></div>
                 </div>
@@ -211,6 +212,7 @@ const Lesson = () => {
         ) : (
             <button
                 className="check-button"
+                onClick={handleFinish}
             >
                 Finish Quiz
             </button>
