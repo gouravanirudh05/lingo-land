@@ -1,3 +1,4 @@
+/* General styling */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .app-container {
@@ -111,26 +112,48 @@
   font-size: 0.9rem;
 }
 
+
 button, .create-profile-button, .sign-in-button, .continue-button {
   font-family: 'Press Start 2P', cursive;
-  background-color: #d2b48c;
-  color: #3d2f1b;
-  border: 2px solid #8b4513;
+  background-color: #d2b48c; 
+  color: #3d2f1b; 
+  border: 2px solid #8b4513; 
   padding: 10px;
   cursor: pointer;
   text-align: center;
   font-size: 0.9rem;
-  box-shadow: 4px 4px #8b4513, 8px 8px #3d2f1b;
+  box-shadow: 4px 4px #8b4513, 8px 8px #3d2f1b; 
 }
 
 button:hover, .create-profile-button:hover, .sign-in-button:hover, .continue-button:hover {
-  background-color: #bfa078;
+  background-color: #bfa078; 
   box-shadow: 3px 3px #8b4513, 6px 6px #3d2f1b;
 }
 
 button:active, .create-profile-button:active, .sign-in-button:active, .continue-button:active {
-  background-color: #a9865e;
+  background-color: #a9865e; 
   box-shadow: 2px 2px #8b4513, 4px 4px #3d2f1b;
+}
+
+/* Profile Button Container */
+.profile-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  margin-top: 10px;
+}
+
+
+.create-profile-button,
+.sign-in-button {
+  width: 80%; 
+  padding: 12px; 
+  text-align: center;
+}
+
+.create-profile-button {
+  margin-bottom: 10px;
 }
 
 /* Right Panel */
@@ -140,6 +163,51 @@ button:active, .create-profile-button:active, .sign-in-button:active, .continue-
   padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 10px;
+  border-left: 4px solid #111;
+}
+
+.leaderboard-info, .daily-quests, .profile-info {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 2px;
+  color: #fff;
+  border: 2px solid #444;
+}
+
+.progress-bar {
+  background-color: #444;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 5px;
+  border: 1px solid #555;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4ade80;
+}
+
+.unlock-info {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  background-color: #444;
+  height: 8px;
+  width: 50%;
+  margin: 0 10px;
+  overflow: hidden;
+  border: 1px solid #555;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4ade80;
+}
+
+.progress-percent {
+  font-size: 0.9rem;
+  color: #9ca3af;
 }
