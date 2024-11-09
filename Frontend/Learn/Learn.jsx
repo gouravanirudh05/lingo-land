@@ -7,9 +7,11 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
     Array(lessons.length).fill(false)
   );
 
+  
   const completedCount = completedLessons.filter(Boolean).length;
   const progress = Math.round((completedCount / lessons.length) * 100);
 
+  
   const toggleLessonCompletion = (index) => {
     setCompletedLessons((prev) => {
       const updated = [...prev];
@@ -25,7 +27,7 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
       <div className="chapter-header" onClick={() => !isLocked && setIsOpen(!isOpen)}>
         <h3>{title}</h3>
         {isLocked ? (
-          <span className="unlock-info">Unlock at {requiredXP} XP 🔒</span>
+          <span className="unlock-info">Unlock at {requiredXP} XP</span>
         ) : (
           <>
             <div className="progress-bar">
@@ -59,7 +61,7 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
 };
 
 const App = () => {
-  const currentXP = 1200;
+  const currentXP = 1200; 
 
   const chapters = [
     { title: 'Chapter 1: Basics', lessons: [
@@ -91,8 +93,8 @@ const App = () => {
         </nav>
       </aside>
 
-      <div className="main-content">
-        <h1 className="learn-title">Learn</h1>
+      <main className="main-content">
+        <h2 className="learn-title">Learn</h2>
         <div className="chapter-container">
           {chapters.map((chapter, index) => (
             <Chapter
@@ -104,7 +106,7 @@ const App = () => {
             />
           ))}
         </div>
-      </div>
+      </main>
 
       <aside className="right-panel">
         <div className="leaderboard-info">
