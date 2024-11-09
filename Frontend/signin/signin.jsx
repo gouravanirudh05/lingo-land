@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import openImage from './assets/open.png';
+import closedImage from './assets/closed.png'; 
 
 const App = () => {
   const [text, setText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
+  const [isTypingPassword, setIsTypingPassword] = useState(false); 
   const fullText = "WWelcome Back!";
 
   useEffect(() => {
@@ -35,13 +38,25 @@ const App = () => {
       {/* Centered container with login form */}
       <div className="centered-container">
         <div className="login-container">
+          {/* Conditional rendering for the images */}
+          <img
+            src={isTypingPassword ? closedImage : openImage} 
+            alt="Login Visual"
+            className="login-image"
+          />
           <h1 className="login-title">Sign In</h1>
           <div className="login-form">
             <label className="login-label">Email</label>
             <input type="email" className="login-input" placeholder="Email" />
 
             <label className="login-label">Password</label>
-            <input type="password" className="login-input" placeholder="Password" />
+            <input
+              type="password"
+              className="login-input"
+              placeholder="Password"
+              onFocus={() => setIsTypingPassword(true)}  
+              onBlur={() => setIsTypingPassword(false)}  
+            />
 
             <button className="sign-in-button">SIGN IN</button>
             <p className="forgot-password-link">Forgot Password?</p>
