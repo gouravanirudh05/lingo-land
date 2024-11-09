@@ -7,11 +7,9 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
     Array(lessons.length).fill(false)
   );
 
-  
   const completedCount = completedLessons.filter(Boolean).length;
   const progress = Math.round((completedCount / lessons.length) * 100);
 
-  
   const toggleLessonCompletion = (index) => {
     setCompletedLessons((prev) => {
       const updated = [...prev];
@@ -27,7 +25,9 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
       <div className="chapter-header" onClick={() => !isLocked && setIsOpen(!isOpen)}>
         <h3>{title}</h3>
         {isLocked ? (
-          <span className="unlock-info">Unlock at {requiredXP} XP</span>
+          <span className="unlock-info">
+            <span className="lock-icon">🔒</span> Unlock at {requiredXP} XP
+          </span>
         ) : (
           <>
             <div className="progress-bar">
@@ -61,23 +61,36 @@ const Chapter = ({ title, lessons, requiredXP, currentXP }) => {
 };
 
 const App = () => {
-  const currentXP = 1200; 
+  const currentXP = 1200;
+  const weeklyStreak = [true, true, false, true, false, true, false];
 
   const chapters = [
-    { title: 'Chapter 1: Basics', lessons: [
+    {
+      title: 'Chapter 1: Basics',
+      lessons: [
         { title: 'Lesson 1', description: 'Basics of letters and sounds' },
         { title: 'Lesson 2', description: 'Common phrases' },
         { title: 'Lesson 3', description: 'Simple conversations' }
-      ], requiredXP: 0 },
-    { title: 'Chapter 2: Intermediate', lessons: [
+      ],
+      requiredXP: 0
+    },
+    {
+      title: 'Chapter 2: Intermediate',
+      lessons: [
         { title: 'Lesson 1', description: 'Grammar fundamentals' },
         { title: 'Lesson 2', description: 'Everyday vocabulary' },
         { title: 'Lesson 3', description: 'Numbers and counting' }
-      ], requiredXP: 1000 },
-    { title: 'Chapter 3: Advanced', lessons: [
+      ],
+      requiredXP: 1000
+    },
+    {
+      title: 'Chapter 3: Advanced',
+      lessons: [
         { title: 'Lesson 1', description: 'Advanced grammar' },
         { title: 'Lesson 2', description: 'Complex sentences' }
-      ], requiredXP: 2000 },
+      ],
+      requiredXP: 2000
+    }
   ];
 
   return (
@@ -109,14 +122,27 @@ const App = () => {
       </main>
 
       <aside className="right-panel">
-        <div className="leaderboard-info">
+        {/* <div className="leaderboard-info">
           <h3>Unlock Leaderboards!</h3>
           <p>Complete 10 more lessons to start competing</p>
-        </div>
+        </div> */}
         <div className="daily-quests">
-          <h3>Daily Quests</h3>
+          <h3>Your XP</h3>
           <p>Earn 10 XP</p>
-          <div className="progress-bar"><div className="progress-fill" style={{ width: '50%' }}></div></div>
+          <div className="progress-bar">
+            <div className="progress-fill" style={{ width: '50%' }}></div>
+          </div>
+        </div>
+        <div className="weekly-streak">
+          <h3>Weekly Streak</h3>
+          <div className="streak-days">
+            {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, index) => (
+              <div key={index} className="streak-day">
+                <span className="day-label">{day}</span>
+                <span className={weeklyStreak[index] ? 'streak-icon fire' : 'streak-icon circle'}></span>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="profile-info">
           <p>Create a profile to save your progress!</p>
