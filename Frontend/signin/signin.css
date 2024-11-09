@@ -73,8 +73,8 @@ body, html {
 
 /* Login container with glassmorphism effect */
 .login-container {
-  background: rgba(43, 47, 66, 0.75); /* semi-transparent */
-  backdrop-filter: blur(10px); /* blur effect */
+  background: rgba(43, 47, 66, 0.75); 
+  backdrop-filter: blur(10px); 
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -196,4 +196,12 @@ body, html {
 
 .left-content h2 {
   animation: flicker 3s linear infinite;
+}
+/* Styling for the login image */
+.login-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
 }
