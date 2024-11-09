@@ -109,16 +109,18 @@ body {
 .side-content {
   position: absolute;
   top: 50%;
+  left: 80%;
+  right:80%;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 25px;
   width: 150px;
   transform: translateY(-50%);
   text-align: center;
 }
 
 .left-content {
-  left: 10px;
-  animation: slideInLeft 1s ease-out;
+  left: 30px;
+  animation: slideInLeft 2s ease-out;
 }
 
 .right-content {
