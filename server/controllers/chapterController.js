@@ -7,7 +7,7 @@ export const getChapters = async (req, res) => {
         if(req.user)
             res.status(201).json({chapters: chapters, currentXP: req.user.xp, loggedIn: true});
         else
-            res.status(201).json({chapters: chapters, loggedIn: false});
+            res.status(401).json({chapters: chapters, loggedIn: false});
 
     } catch (err) {
         res.status(400).json({ message: err.message });

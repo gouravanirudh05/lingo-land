@@ -22,7 +22,6 @@ const Chapter = ({ title, indexChap, lessons, requiredXP, currentXP, loggedIn })
     };
 
     var isLocked = currentXP < requiredXP;
-    var isLocked = !loggedIn;
   
     return (
       <div className="chapter">

@@ -20,30 +20,40 @@ const Learn = () => {
   };
 
   useEffect(() => {
-    // Fetch the question and options from the backend
-    async function fetchData()
-    {
-        const response = await fetch(`${BACKEND_URL}/api/chapter/chapters`, {
-            method: "POST",
-            headers: {
-                'Authorization': `Bearer ${getJwt()}`,
-                'Content-Type': 'application/json'
+    async function fetchData() {
+        try {
+            const response = await fetch(`${BACKEND_URL}/api/chapter/chapters`, {
+                method: "POST",
+                headers: {
+                    'Authorization': `Bearer ${getJwt()}`,
+                    'Content-Type': 'application/json'
                 },
-        });
+            });
 
-        const json = await response.json();
-        setChapters(json.chapters);
-        if(json.loggedIn)
-            setCurrentXP(json.currentXP);
+            if (response.status === 401) {
+                // User is not logged in, handle the unauthorized status
+                setLoggedIn(false);
+                console.error("User not authenticated");
+                return;
+            }
 
-        setLoggedIn(json.loggedIn)
+            const json = await response.json();
+            setChapters(json.chapters);
+            if (json.loggedIn) {
+                setCurrentXP(json.currentXP);
+            }
 
+            setLoggedIn(json.loggedIn);
+
+        } catch (error) {
+            console.error("Error fetching chapters:", error);
+        }
     }
 
     fetchData();
     setActiveComponent("learn");
-
 }, []);
+
 
   return (
     <div className="app-container">

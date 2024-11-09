@@ -1,212 +1,108 @@
-/* General styling */
-
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body, html, .app-container {
+
+.signin-page body,
+.signin-page html {
   width: 100vw;
   height: 100vh;
-  font-family: 'Press Start 2P', cursive; /* Pixelated font */
-  display: flex;
+  font-family: 'Press Start 2P', cursive;
   color: #fff;
-  background-color: #1e1e1e;
-}
-
-.app-container {
-  display: flex;
-  background-color: #1e1e1e;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 20%;
-  background-color: #222;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-right: 4px solid #111; /* Blocky border */
-}
-
-.logo {
-  font-size: 1rem;
-  color: #4ade80;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* Reduced spacing for a compact look */
-  width: 100%;
-}
-
-.menu-item {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  padding: 8px;
-  border-radius: 2px; /* Square corners */
-  background-color: #333;
-}
-
-.menu-item.active, .menu-item:hover {
-  background-color: #4ade80;
-  color: #000;
-}
-
-/* Main Content */
-.main-content {
-  width: 60%;
-  padding: 20px;
+  background: linear-gradient(130deg, #0e0e0e, #333b63, #1e1c1c);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #121212;
-  border-left: 4px solid #111;
-  border-right: 4px solid #111;
 }
 
-.lesson-info {
-  text-align: left;
-  color: #fff;
+/* Background animation */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.lesson-header {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
 }
 
-.lesson-title {
+.signin-page .app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
+  gap: 2rem;
+}
+
+/* Left content with floating animation */
+.signin-page .left-content {
+  width: 250px;
+  text-align: center;
+  color: #a0aec0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.signin-page .left-content h2 {
   font-size: 1.2rem;
   color: #4ade80;
   margin-bottom: 10px;
-}
-
-.start-button {
-  background-color: #4ade80;
-  color: #000;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  border: 2px solid #333;
-}
-
-.start-button:hover {
-  background-color: #34d399;
-}
-
-.owl-icon {
-  font-size: 1.5rem;
-  margin-top: 10px;
-}
-
-/* Right Panel */
-.right-panel {
-  width: 20%;
-  background-color: #2d2d2d;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-left: 4px solid #111;
-}
-
-.leaderboard-info, .daily-quests, .profile-info {
-  background-color: #333;
-  padding: 10px;
-  border-radius: 2px;
-  color: #fff;
-  border: 2px solid #444; /* Blocky border */
-}
-
-.daily-quests .progress-bar {
-  background-color: #444;
-  border-radius: 2px;
-  height: 8px;
   overflow: hidden;
-  margin-top: 5px;
-  border: 1px solid #555; /* Pixelated look */
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  text-shadow: 0 0 10px #4ade80, 0 0 20px #4ade80;
 }
 
-.progress-fill {
-  height: 100%;
-  background-color: #4ade80;
-}
-
-.create-profile-button, .sign-in-button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  border-radius: 2px;
+.signin-page .left-content p {
   font-size: 0.9rem;
-  cursor: pointer;
-  border: 2px solid #333;
-  background-color: #4ade80;
-  color: #000;
-  text-align: center;
+  color: #a0aec0;
 }
 
-.sign-in-button {
-  background-color: #3b82f6;
-  color: #fff;
-}
-
-body {
-  background-color: #1e2943;
-  font-family: 'PixelFont', sans-serif;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.centered-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.login-container {
-  background-color: #2b2f42;
+/* Login container with glassmorphism effect */
+.signin-page .login-container {
+  background: rgba(43, 47, 66, 0.75); 
+  backdrop-filter: blur(10px); 
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  width: 300px;
+  width: 320px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: float 5s ease-in-out infinite;
 }
 
-.login-title {
+.signin-page .login-title {
   color: #ffffff;
   font-size: 24px;
   margin-bottom: 20px;
+  text-shadow: 0 0 5px #4792ff, 0 0 10px #4792ff;
 }
 
-.login-form {
+.signin-page .login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.login-label {
+.signin-page .login-label {
   color: #a0aec0;
   font-size: 14px;
   margin-bottom: 5px;
   align-self: flex-start;
 }
 
-.login-input {
+.signin-page .login-input {
   background-color: #4b4f62;
   color: #ffffff;
   padding: 10px;
@@ -215,9 +111,16 @@ body {
   width: 100%;
   border-radius: 5px;
   font-size: 14px;
+  transition: transform 0.2s;
 }
 
-.sign-in-button {
+.signin-page .login-input:focus {
+  outline: 2px solid #4792ff;
+  transform: scale(1.05);
+}
+
+.signin-page .sign-in-button, 
+.signin-page .social-signin-button {
   background-color: #4792ff;
   color: #ffffff;
   padding: 10px;
@@ -227,24 +130,78 @@ body {
   font-weight: bold;
   border-radius: 5px;
   margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 0 10px #4792ff, 0 0 20px #4792ff;
 }
 
-.social-login {
-  margin-top: 15px;
+.signin-page .sign-in-button:hover,
+.signin-page .social-signin-button:hover {
+  background-color: #357ae8;
+  transform: scale(1.05);
+}
+
+/* Social button styling */
+.signin-page .social-signin-button {
+  margin-top: 5px;
+  background-color: #db4437; /* Google red */
+  box-shadow: 0 0 10px #db4437, 0 0 20px #db4437;
+}
+
+.signin-page .forgot-password-link {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  margin-top: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Typing effect */
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+.signin-page .cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: #4ade80;
+  margin-left: 2px;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+
+/* Right content with hover effect */
+.signin-page .right-content h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #4ade80;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.signin-page .right-content h2:hover {
+  color: #4ade80;
+  transform: scale(1.1);
+}
+
+.signin-page .right-content p {
+  font-size: 0.9rem;
   color: #a0aec0;
 }
 
-.social-login p {
-  margin: 5px 0;
+/* Flicker effect for welcome text */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
 }
 
-.google-login {
-  background-color: #ffffff;
-  color: #333333;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 5px;
+.signin-page .left-content h2 {
+  animation: flicker 3s linear infinite;
+}
+
+/* Styling for the login image */
+.signin-page .login-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
 }
