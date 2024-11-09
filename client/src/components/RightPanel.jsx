@@ -43,8 +43,8 @@ const RightPanel = () => {
           <p>Complete 10 more lessons to start competing</p>
         </div> */}
         <div className="daily-quests">
-          <h3>Your XP</h3>
-          <p>Earn 10 XP</p>
+          <h3>Today's XP</h3>
+          <p>Progess: {progress}%</p>
           <div className="progress-bar">
             <div className="progress-fill" style={{ width: progress }}></div>
           </div>

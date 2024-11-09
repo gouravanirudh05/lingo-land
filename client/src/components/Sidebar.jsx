@@ -1,31 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import openImage from '../assets/open.png';
+import'./Sidebar.css';
 
 const Sidebar = ({ activeComponent }) => {
   return (
     <aside className="sidebar">
-      <h2 className="logo">duolingo</h2>
+        <img
+              src={openImage}
+              alt="Login Visual"
+              className="sidebar-image"
+            />
+      <h2 className="logo">lingo-land</h2>
       <nav className="menu">
         <Link to='/learn' className={`menu-item ${activeComponent === 'learn' ? 'active' : ''}`}>
           🏠 Learn
         </Link>
-        <Link to='/letters' className={`menu-item ${activeComponent === 'letters' ? 'active' : ''}`}>
-          क Letters
-        </Link>
         <Link to='/leaderboard' className={`menu-item ${activeComponent === 'leaderboard' ? 'active' : ''}`}>
-          🛡 Leaderboards
-        </Link>
-        <Link to='/quests' className={`menu-item ${activeComponent === 'quests' ? 'active' : ''}`}>
-          📘 Quests
-        </Link>
-        <Link to='/shop' className={`menu-item ${activeComponent === 'shop' ? 'active' : ''}`}>
-          🛍 Shop
+          🛡 Leaderboard
         </Link>
         <Link to='/profile' className={`menu-item ${activeComponent === 'profile' ? 'active' : ''}`}>
           👤 Profile
-        </Link>
-        <Link to='/more' className={`menu-item ${activeComponent === 'more' ? 'active' : ''}`}>
-          ⋯ More
         </Link>
       </nav>
     </aside>
