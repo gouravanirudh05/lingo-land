@@ -55,7 +55,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](lingo-land\client\src\assets\image.png)
+![Project](client/src/assets/image.png)
+
 Lingo Land is a modern, scalable web application designed to provide users with an engaging and personalized language learning experience. The platform is built using a **full-stack architecture** with the latest technologies to ensure a responsive, high-performance user interface and robust backend functionality.
 
 At its core, Lingo Land combines **React.js** for dynamic frontend development, **Node.js** and **Express.js** for building fast, scalable server-side APIs, and **MongoDB** for a flexible and scalable database solution.
