@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 const server = createServer(app);
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mylingodatabase', {
+mongoose.connect('mongodb+srv://sathishsv:Sanvij1103@cluster0.3llub.mongodb.net/mylingodatabase', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
