@@ -1,0 +1,114 @@
+/* Base Styles */
+html, body {
+    height: 100%;
+    overflow: auto; /* Ensure scrolling is enabled */
+    margin: 0; /* Remove default margins */
+  }
+  
+  
+  .landing-page {
+    min-height: 100%; /* Use percentage height for flexibility */
+    background: linear-gradient(to bottom, #4c51bf, #1a202c);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  
+  .container {
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Header Section */
+  .header {
+    margin-bottom: 50px;
+  }
+  
+  .title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #d1d5db;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .button.sign-in {
+    background-color: #5a67d8;
+  }
+  
+  .button.sign-in:hover {
+    background-color: #4c51bf;
+    transform: scale(1.05);
+  }
+  
+  .button.sign-up {
+    background-color: #667eea;
+  }
+  
+  .button.sign-up:hover {
+    background-color: #5a67d8;
+    transform: scale(1.05);
+  }
+  
+  /* Features Section */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .feature-card {
+    background: linear-gradient(to right, #4c51bf, #1a202c);
+    border: 1px solid #5a67d8;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    color: white;
+  }
+  
+  .feature-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .feature-description {
+    font-size: 1rem;
+    color: #d1d5db;
+  }
+  
